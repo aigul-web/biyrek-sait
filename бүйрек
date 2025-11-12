@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бүйрек жұмысына әсер ететін факторлар</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .accordion-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .accordion-content.open {
+            max-height: 5000px; 
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-arrow.open {
+            transform: rotate(90deg);
+        }
+        .nav-button.active {
+            background-color: #0369a1; 
+            color: white;
+            font-weight: 600;
+        }
+        .nav-button {
+            background-color: #e5e7eb; 
+            color: #1f2937; 
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .nav-button:hover:not(.active) {
+            background-color: #d1d5db;
+        }
+        /* Style for interactive buttons/options */
+        .interactive-btn {
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .interactive-btn:hover {
+            background-color: #f3f4f6;
+        }
+        .interactive-btn.selected {
+            background-color: #bfdbfe;
+            border-color: #3b82f6;
+        }
+        .correct {
+            background-color: #d1fae5 !important;
+            border-color: #10b981 !important;
+        }
+        .incorrect {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 leading-relaxed">
+
+    <main class="max-w-5xl mx-auto p-4 md:p-8 my-8 bg-white rounded-xl shadow-lg">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-sky-800 mb-3">Бүйрек жұмысына әсер ететін факторлар</h1>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                Бүйректің қалыпты жұмысын түсіну және оған әсер ететін негізгі факторларды зерттеу үшін осы интерактивті нұсқаулықты пайдаланыңыз.
+            </p>
+        </header>
+
+        <nav class="flex flex-wrap justify-center space-x-2 sm:space-x-4 mb-8">
+            <button class="nav-button active py-3 px-4 rounded-lg font-medium" data-target="section-regulation">
+                Ішкі Реттеу
+            </button>
+            <button class="nav-button py-3 px-4 rounded-lg font-medium" data-target="section-external">
+                Сыртқы Әсерлер
+            </button>
+            <button class="nav-button py-3 px-4 rounded-lg font-medium" data-target="section-pathology">
+                Аурулар
+            </button>
+            <button class="nav-button py-3 px-4 rounded-lg font-medium mt-2 sm:mt-0" data-target="section-tasks">
+                <span class="font-extrabold text-lg">Тапсырмалар</span>
+            </button>
+        </nav>
+
+        <div id="content-area">
+            
+            <!-- SECTION 1: Ішкі Реттеу (Existing Content) -->
+            <section id="section-regulation" class="content-section space-y-4">
+                <p class="text-base text-gray-600 mb-4 p-4 bg-gray-50 rounded-lg">
+                    Бұл бөлімде ағзаның ішкі ортасының тұрақтылығын (гомеостазды) сақтау үшін бүйрек жұмысын тікелей реттейтін негізгі физиологиялық процестер қарастырылады.
+                </p>
+                <div class="accordion-container border rounded-lg overflow-hidden">
+                    
+                    <div class="accordion-item border-b">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition">
+                            <span class="text-xl font-semibold text-sky-700">1. Сулану (Гидратация) деңгейі</span>
+                            <span class="accordion-arrow text-2xl text-sky-700">&#8250;</span>
+                        </button>
+                        <div class="accordion-content bg-white px-5">
+                            <p class="mb-4">Бұл бүйрек жұмысының ең негізгі факторы.</p>
+                            <ul class="space-y-3 list-inside">
+                                <li>
+                                    <strong class="text-gray-800">Судың жеткіліксіздігі (Дегидратация):</strong> 
+                                    Егер ағзада су аз болса, бүйрек қанның осмостық қысымын реттеу үшін суды барынша көп сіңіріп, несепті (зәрді) өте аз және концентрацияланған күйде шығарады. Ұзақ дегидратация бүйрекке салмақ түсіріп, тас түзілу қаупін арттырады.
+                                </li>
+                                <li>
+                                    <strong class="text-gray-800">Судың артықтығы:</strong> 
+                                    Су көп болса, бүйрек оны тез шығаруға мәжбүр болады, нәтижесінде несеп көп және сұйық болады.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-b">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition">
+                            <span class="text-xl font-semibold text-sky-700">2. Қан қысымы (Қан ағымы)</span>
+                            <span class="accordion-arrow text-2xl text-sky-700">&#8250;</span>
+                        </button>
+                        <div class="accordion-content bg-white px-5">
+                            <p class="mb-4">Бүйректің негізгі қызметі – қанды сүзу. Сүзу жылдамдығы (клубоктік фильтрация жылдамдығы, КФЖ) қан қысымына тікелей байланысты.</p>
+                             <ul class="space-y-3 list-inside">
+                                <li>
+                                    <strong class="text-gray-800">Жоғары қан қысымы (Гипертензия):</strong> 
+                                    Бүйректің кішкентай қан тамырларына (клубочектерге) зақым келтіреді, бұл олардың біртіндеп тыртықтануына және сүзу қабілетінің төмендеуіне әкеледі. Бұл бүйрек ауруының негізгі себептерінің бірі.
+                                </li>
+                                <li>
+                                    <strong class="text-gray-800">Төмен қан қысымы (Гипотензия):</strong> 
+                                    Сүзуге қажетті қысым жеткіліксіз болғандықтан, бүйректегі қан ағымы азаяды, бұл сүзу процесін бәсеңдетеді және бүйрек ұлпаларының оттегімен қамтамасыз етілуін нашарлатады.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition">
+                            <span class="text-xl font-semibold text-sky-700">3. Гормондар</span>
+                            <span class="accordion-arrow text-2xl text-sky-700">&#8250;</span>
+                        </button>
+                        <div class="accordion-content bg-white px-5">
+                            <p class="mb-4">Бүйрек жұмысын реттеуде бірнеше гормондар маңызды рөл атқарады.</p>
+                            <ul class="space-y-3 mb-6">
+                                <li><strong class="text-gray-800">Антидиуретикалық гормон (АДГ) / Вазопрессин:</strong> Гипофизден бөлінеді. Қанның осмостық қысымы жоғарылағанда (су жетіспегенде) бөлініп, бүйректің жинақтаушы өзекшелеріндегі судың қайта сіңірілуін күшейтеді.</li>
+                                <li><strong class="text-gray-800">Альдостерон:</strong> Бүйрек үсті безінен бөлінеді. Қан қысымы төмендегенде немесе натрий деңгейі төмендегенде бөлініп, бүйректегі натрий иондарының қайта сіңірілуін және калийдің бөлінуін реттейді.</li>
+                                <li><strong class="text-gray-800">Ренин-ангиотензин-альдостерон жүйесі (РААЖ):</strong> Бұл жүйе қан қысымын және су-тұз балансын реттеуге жауапты.</li>
+                            </ul>
+                            
+                            <h4 class="font-semibold text-lg mb-3 text-gray-800">РААЖ Жүйесінің Қарапайым Схемасы:</h4>
+                            <div class="flex flex-col md:flex-row md:items-center justify-around space-y-2 md:space-y-0 md:space-x-2 text-center p-4 bg-gray-50 rounded-lg">
+                                <div class="p-2 bg-white rounded shadow-sm"><strong class="text-sky-700">Ренин</strong><br>(Бүйрек)</div>
+                                <span class="text-xl font-bold text-gray-500 transform rotate-90 md:rotate-0">&rarr;</span>
+                                <div class="p-2 bg-white rounded shadow-sm">Ангиотензиноген<br>→ Ангиотензин I</div>
+                                <span class="text-xl font-bold text-gray-500 transform rotate-90 md:rotate-0">&rarr;</span>
+                                <div class="p-2 bg-white rounded shadow-sm">Ангиотензин II</div>
+                                <span class="text-xl font-bold text-gray-500 transform rotate-90 md:rotate-0">&rarr;</span>
+                                <div class="flex flex-col space-y-2">
+                                    <div class="p-2 bg-sky-100 rounded shadow-sm">Тамырлардың тарылуы</div>
+                                    <div class="p-2 bg-sky-100 rounded shadow-sm">Альдостерон бөлінуі<br>(Na+ ұстау)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- SECTION 2: Сыртқы Әсерлер (Existing Content) -->
+            <section id="section-external" class="content-section space-y-4 hidden">
+                <p class="text-base text-gray-600 mb-4 p-4 bg-gray-50 rounded-lg">
+                    Бұл бөлімде біздің өмір салтымызға және қоршаған ортаға байланысты факторлар, яғни тамақтану, қабылдайтын заттар және сыртқы температураның бүйрекке әсері сипатталады.
+                </p>
+                <div class="accordion-container border rounded-lg overflow-hidden">
+
+                     <div class="accordion-item border-b">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition">
+                            <span class="text-xl font-semibold text-sky-700">4. Тамақтану және диета</span>
+                            <span class="accordion-arrow text-2xl text-sky-700">&#8250;</span>
+                        </button>
+                        <div class="accordion-content bg-white px-5">
+                            <p class="mb-4">Қабылдайтын тағамдар бүйрекке түсетін жұмыс жүктемесіне әсер етеді.</p>
+                            <ul class="space-y-3 list-inside">
+                                <li>
+                                    <strong class="text-gray-800">Тұзды көп тұтыну:</strong> 
+                                    Ағзадағы натрий деңгейінің жоғарылауы қан көлемін ұлғайтып, қан қысымын көтереді, бұл бүйректің артық тұзды шығару үшін көп жұмыс істеуіне мәжбүрлейді.
+                                </li>
+                                <li>
+                                    <strong class="text-gray-800">Ақуызды шамадан тыс тұтыну:</strong> 
+                                    Ақуыз метаболизмінің (алмасуының) соңғы өнімдері (несепнәр, креатинин) бүйрек арқылы шығарылады. Ақуыз көп болса, бүйрекке бұл қалдықтарды сүзу және шығару үшін қосымша жүктеме түседі.
+                                </li>
+                                 <li>
+                                    <strong class="text-gray-800">Токсиндер және дәрі-дәрмектер:</strong> 
+                                    Кейбір дәрі-дәрмектер (мысалы, қабынуға қарсы стероидты емес препараттар, антибиотиктердің кейбір түрлері) бүйрек ұлпаларына тікелей уытты (токсикалық) әсер етуі мүмкін.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition">
+                            <span class="text-xl font-semibold text-sky-700">6. Қоршаған орта температурасы</span>
+                            <span class="accordion-arrow text-2xl text-sky-700">&#8250;</span>
+                        </button>
+                        <div class="accordion-content bg-white px-5">
+                            <p class="mb-4">Сыртқы температура да бүйрек жұмысына жанама түрде әсер етеді.</p>
+                            <ul class="space-y-3 list-inside">
+                                <li>
+                                    <strong class="text-gray-800">Ыстық ауа-райы:</strong> 
+                                    Терлеу арқылы көп сұйықтық жоғалтамыз. Бұл қан көлемінің азаюына және осмостық қысымның артуына әкеледі, нәтижесінде АДГ гормоны бөлініп, бүйрек суды ұстап қалуға тырысады (несептің концентрациясы артады).
+                                </li>
+                                <li>
+                                    <strong class="text-gray-800">Суық ауа-райы:</strong> 
+                                    Терлеу азаяды. Қан тамырлары тарылып, қан қысымы көтеріледі. Бүйрек артық сұйықтықты шығару арқылы қысымды төмендетуге тырысады, сондықтан несеп шығару жиілейді.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- SECTION 3: Аурулар мен Жағдайлар (Existing Content) -->
+            <section id="section-pathology" class="content-section space-y-4 hidden">
+                <p class="text-base text-gray-600 mb-4 p-4 bg-gray-50 rounded-lg">
+                    Бұл бөлімде бүйректің қызметіне тікелей немесе жанама түрде теріс әсер ететін әртүрлі аурулар мен патологиялық жағдайлар көрсетілген.
+                </p>
+                <div class="accordion-container border rounded-lg overflow-hidden">
+                    
+                     <div class="accordion-item">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition">
+                            <span class="text-xl font-semibold text-sky-700">5. Аурулар және патологиялық жағдайлар</span>
+                            <span class="accordion-arrow text-2xl text-sky-700">&#8250;</span>
+                        </button>
+                        <div class="accordion-content bg-white px-5">
+                            <p class="mb-4">Бүйрек жұмысының бұзылуына тікелей немесе жанама әсер ететін аурулар.</p>
+                            <ul class="space-y-3 list-inside">
+                                <li>
+                                    <strong class="text-gray-800">Қант диабеті:</strong> 
+                                    Қандағы қанттың жоғары деңгейі уақыт өте келе бүйректің сүзу бірліктерін (нефрондарды) зақымдап, бүйрек жеткіліксіздігіне әкеледі.
+                                </li>
+                                <li>
+                                    <strong class="text-gray-800">Гломерулонефрит:</strong> 
+                                    Бүйректің сүзгі бөлігінің (клубочектердің) қабынуы.
+                                </li>
+                                 <li>
+                                    <strong class="text-gray-800">Бүйрек тастары (Нефролитиаз):</strong> 
+                                    Зәр шығару жолдарын бітеп, бүйректен несептің ағып кетуіне кедергі келтіреді, бұл бүйрекке кері қысым түсіреді.
+                                </li>
+                                <li>
+                                    <strong class="text-gray-800">Созылмалы бүйрек жеткіліксіздігі:</strong> 
+                                    Бүйректің сүзу және реттеу қабілетінің тұрақты түрде төмендеуі.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 4: Тапсырмалар (NEW) -->
+            <section id="section-tasks" class="content-section space-y-8 hidden">
+                <h2 class="text-2xl font-bold text-sky-800 border-b pb-2">Білімді бекітуге арналған тапсырмалар</h2>
+
+                <!-- 1. Сәйкестендіру тесті (Matching Test 1 - Internal Regulation) -->
+                <div id="matching-test-internal" class="p-6 bg-white border border-sky-200 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-sky-700">1. Сәйкестендіру тесті (Ішкі Реттеу)</h3>
+                    <p class="text-gray-600 mb-4">Ішкі реттеудің негізгі факторын оның әсерімен сәйкестендіріңіз.</p>
+                    
+                    <div id="matching-container-internal" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Matching Pairs will be injected here -->
+                    </div>
+
+                    <div class="flex justify-end mt-6 space-x-4">
+                        <button onclick="checkMatchingInternal()" class="py-2 px-4 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition">
+                            Жауаптарды тексеру
+                        </button>
+                        <button onclick="resetMatchingInternal()" class="py-2 px-4 bg-gray-300 text-gray-800 font-semibold rounded-lg hover:bg-gray-400 transition">
+                            Тазалау
+                        </button>
+                    </div>
+                    <p id="matching-result-internal" class="mt-4 font-bold"></p>
+                </div>
+
+                <!-- 2. Сәйкестендіру тесті (Matching Test 2 - External Influences) -->
+                <div id="matching-test-external" class="p-6 bg-white border border-green-200 rounded-xl shadow-md mt-8">
+                    <h3 class="text-xl font-semibold mb-4 text-green-700">2. Сәйкестендіру тесті (Сыртқы Әсерлер)</h3>
+                    <p class="text-gray-600 mb-4">Сыртқы факторды оның бүйрекке әсерімен сәйкестендіріңіз.</p>
+                    
+                    <div id="matching-container-external" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Matching Pairs will be injected here -->
+                    </div>
+
+                    <div class="flex justify-end mt-6 space-x-4">
+                        <button onclick="checkMatchingExternal()" class="py-2 px-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">
+                            Жауаптарды тексеру
+                        </button>
+                        <button onclick="resetMatchingExternal()" class="py-2 px-4 bg-gray-300 text-gray-800 font-semibold rounded-lg hover:bg-gray-400 transition">
+                            Тазалау
+                        </button>
+                    </div>
+                    <p id="matching-result-external" class="mt-4 font-bold"></p>
+                </div>
+
+                <!-- 3. Тест (Multiple Choice Quiz) -->
+                <div id="quiz" class="p-6 bg-white border border-sky-200 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-sky-700">3. Тест (Көп таңдаулы сұрақтар)</h3>
+                    <div id="quiz-container" class="space-y-6">
+                        <!-- Quiz Questions will be injected here -->
+                    </div>
+                    
+                    <div class="flex justify-end mt-6">
+                        <button onclick="checkQuiz()" class="py-2 px-4 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition">
+                            Нәтижені көрсету
+                        </button>
+                    </div>
+                    <p id="quiz-result" class="mt-4 text-xl font-bold text-center"></p>
+                </div>
+                
+                <!-- 4. Функционалдық сауаттылық (Functional Literacy Task) -->
+                 <div id="functional-literacy" class="p-6 bg-white border border-sky-200 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-sky-700">4. Функционалдық сауаттылық тапсырмасы</h3>
+                    
+                    <p class="font-bold mb-3">Жағдаят (Сценарий):</p>
+                    <div class="p-4 bg-gray-50 border rounded-lg mb-4 text-gray-700 italic">
+                        <p>Азамат А. жаздың аптап ыстығында 4 сағаттық ауыр жұмыстан кейін қатты шөлдеді. Ол ағзасында судың жетіспеушілігін сезіп, тез қалпына келтіру үшін тым көп мөлшерде тұз қосылған су ішуге шешім қабылдады.</p>
+                    </div>
+
+                    <p class="font-bold mb-3">Тапсырма:</p>
+                    <p class="mb-4">Азамат А-ның бұл әрекеті (тұзды суды көп ішу) бүйрек жұмысына қалай әсер етеді және оның орнына қандай дұрыс әрекет жасауы керек еді? (Кемінде 3-4 сөйлеммен жауап беріңіз)</p>
+
+                    <div class="mb-4">
+                        <label for="student-name" class="block text-sm font-medium text-gray-700 mb-1">Оқушының Аты-жөні:</label>
+                        <input type="text" id="student-name" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500" placeholder="Мысалы: Әлібек Сәбитов">
+                    </div>
+
+                    <textarea id="literacy-answer" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500" placeholder="Жауабыңызды осы жерге енгізіңіз..."></textarea>
+                    
+                    <div class="flex justify-between items-center mt-4">
+                        <button onclick="submitLiteracyAnswer()" class="py-2 px-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">
+                            Жауапты Жіберу (Save)
+                        </button>
+                        <button onclick="toggleLiteracyAnswer()" class="py-2 px-4 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition">
+                            Үлгі жауапты көру
+                        </button>
+                    </div>
+                    <p id="submission-feedback" class="mt-2 text-sm font-medium"></p>
+                    
+                    <div id="literacy-sample-answer" class="mt-4 p-4 hidden bg-amber-50 border border-amber-300 rounded-lg">
+                         <p class="font-bold text-amber-800 mb-2">Үлгі Жауап:</p>
+                         <p class="text-amber-800">
+                            Азамат А-ның бұл әрекеті бүйрекке қосымша салмақ түсіреді. Себебі: **Тұзды көп тұтыну** қандағы натрий деңгейін күрт арттырып, қан көлемін ұлғайтады және **қан қысымын көтереді**. Бүйрек артық тұзды шығару үшін қарқынды жұмыс істеуге мәжбүр болады. Дұрыс шешім: Ол минералдық заттардың шағын мөлшері бар **таза суды** немесе изотоникалық сусындарды **аз-аздап**, бірақ **жиі** ішуі керек еді. Бұл дегидратацияны біртіндеп қалпына келтіріп, бүйрекке артық жүктеме түсірмес еді.
+                         </p>
+                    </div>
+                </div>
+
+                <!-- 5. МҰҒАЛІМ КӨРЕТІН БӨЛІМ (Submissions View) -->
+                <div id="submissions-view" class="p-6 bg-white border border-red-200 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-red-700">5. Жіберілген Жауаптар (Мұғалім үшін)</h3>
+                    
+                    <button id="toggle-submissions" onclick="toggleSubmissions()" class="py-2 px-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition">
+                        Жауаптарды көрсету
+                    </button>
+
+                    <div id="submissions-list" class="mt-4 space-y-4 hidden">
+                         <p id="submission-status" class="text-gray-500 italic">Жүктелуде...</p>
+                        <!-- Submissions will be listed here -->
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, serverTimestamp, setLogLevel, doc, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables for Firebase access
+        let app, auth, db;
+        let userId = 'anonymous';
+        let isAuthReady = false;
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        const PUBLIC_COLLECTION_PATH = `artifacts/${appId}/public/data/kidney_answers`;
+
+        // Function to convert Firestore Timestamp to readable date
+        window.formatTimestamp = (timestamp) => {
+            if (!timestamp) return 'Белгісіз уақыт';
+            const date = timestamp.toDate();
+            return date.toLocaleString('kk-KZ', { 
+                year: 'numeric', 
+                month: 'numeric', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+        };
+
+        async function initFirebase() {
+            if (!firebaseConfig) {
+                console.error("Firebase Configuration is missing.");
+                document.getElementById('submission-status').textContent = "Дерекқор қатесі: Конфигурация жоқ.";
+                return;
+            }
+            try {
+                // setLogLevel('debug');
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                await setPersistence(auth, browserSessionPersistence);
+
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        isAuthReady = true;
+                        console.log("Firebase Auth Ready. User ID:", userId);
+                        // Start listening to submissions only after auth is ready
+                        renderSubmissionsListener(); 
+                    } else {
+                        console.log("No user signed in.");
+                        isAuthReady = false;
+                    }
+                });
+
+            } catch (error) {
+                console.error("Firebase Initialization Error:", error);
+                document.getElementById('submission-status').textContent = `Дерекқорды инициализациялау қатесі: ${error.message}`;
+            }
+        }
+
+        // --- Submission Logic ---
+        window.submitLiteracyAnswer = async () => {
+            if (!isAuthReady || !db) {
+                document.getElementById('submission-feedback').textContent = "❌ Дерекқор дайын емес. Аз күтіңіз.";
+                return;
+            }
+
+            const studentName = document.getElementById('student-name').value.trim();
+            const answerText = document.getElementById('literacy-answer').value.trim();
+            const feedbackElement = document.getElementById('submission-feedback');
+            
+            if (!studentName || !answerText) {
+                feedbackElement.textContent = "⚠️ Аты-жөніңізді және жауабыңызды енгізіңіз.";
+                feedbackElement.className = 'mt-2 text-sm font-medium text-red-600';
+                return;
+            }
+
+            try {
+                await addDoc(collection(db, PUBLIC_COLLECTION_PATH), {
+                    studentName: studentName,
+                    answer: answerText,
+                    submittedAt: serverTimestamp(),
+                    userId: userId 
+                });
+
+                feedbackElement.textContent = "✅ Жауабыңыз сәтті жіберілді!";
+                feedbackElement.className = 'mt-2 text-sm font-medium text-green-600';
+                document.getElementById('literacy-answer').value = ''; // Clear answer field
+            } catch (error) {
+                console.error("Error submitting answer:", error);
+                feedbackElement.textContent = `❌ Жауапты жіберу қатесі: ${error.message}`;
+                feedbackElement.className = 'mt-2 text-sm font-medium text-red-600';
+            }
+        };
+
+        // --- Read Submissions Logic (Teacher View) ---
+        function renderSubmissionsListener() {
+            if (!isAuthReady || !db) return;
+
+            const submissionsList = document.getElementById('submissions-list');
+            const statusElement = document.getElementById('submission-status');
+
+            try {
+                // NOTE: Firestore's security rules for 'public' path may require the user to be authenticated.
+                const q = query(collection(db, PUBLIC_COLLECTION_PATH), orderBy('submittedAt', 'desc'));
+                
+                onSnapshot(q, (snapshot) => {
+                    const submissions = [];
+                    snapshot.forEach(doc => {
+                        submissions.push({ id: doc.id, ...doc.data() });
+                    });
+
+                    if (submissions.length === 0) {
+                        submissionsList.innerHTML = '<p class="text-gray-500 italic">Әлі ешқандай жауап жіберілмеген.</p>';
+                        return;
+                    }
+
+                    submissionsList.innerHTML = submissions.map(sub => `
+                        <div class="p-3 border border-gray-200 rounded-lg bg-white shadow-sm">
+                            <p class="font-bold text-sky-800">${sub.studentName || 'Анонимді оқушы'} 
+                                <span class="text-sm font-normal text-gray-500 ml-2">(${window.formatTimestamp(sub.submittedAt)})</span>
+                            </p>
+                            <p class="mt-1 text-gray-700 whitespace-pre-wrap">${sub.answer}</p>
+                        </div>
+                    `).join('');
+                    statusElement.style.display = 'none';
+
+                }, (error) => {
+                    console.error("Error listening to submissions:", error);
+                    submissionsList.innerHTML = `<p class="text-red-500">Деректерді жүктеу қатесі: ${error.message}</p>`;
+                });
+
+            } catch (error) {
+                console.error("Firestore Query Setup Error:", error);
+                submissionsList.innerHTML = `<p class="text-red-500">Дерекқор сұранысын орнату қатесі.</p>`;
+            }
+        }
+
+        window.toggleSubmissions = () => {
+            const list = document.getElementById('submissions-list');
+            const button = document.getElementById('toggle-submissions');
+            
+            list.classList.toggle('hidden');
+            
+            if (list.classList.contains('hidden')) {
+                button.textContent = 'Жауаптарды көрсету';
+                button.classList.remove('bg-gray-600', 'hover:bg-gray-700');
+                button.classList.add('bg-red-600', 'hover:bg-red-700');
+            } else {
+                button.textContent = 'Жауаптарды жасыру';
+                button.classList.remove('bg-red-600', 'hover:bg-red-700');
+                button.classList.add('bg-gray-600', 'hover:bg-gray-700');
+            }
+        };
+
+
+        // --- Other Interactive Logics ---
+        
+        window.toggleLiteracyAnswer = () => {
+            document.getElementById('literacy-sample-answer').classList.toggle('hidden');
+        }
+        
+        // --- MATCHING DATA 1: Internal Regulation ---
+        const matchingDataInternal = [
+            { id: 'A', question: 'Сулану (Гидратация)', answerId: 'B' },
+            { id: 'B', question: 'Қан қысымы', answerId: 'C' },
+            { id: 'C', question: 'Гормондар', answerId: 'A' }
+        ];
+
+        const matchingOptionsInternal = [
+            { id: 'A', text: 'АДГ, Альдостерон және РААЖ жүйесін қамтитын химиялық реттеушілер.' },
+            { id: 'B', text: 'Қанның осмостық қысымына әсер етеді, несептің концентрациясын өзгертеді.' },
+            { id: 'C', text: 'Клубоктік фильтрация жылдамдығына (КФЖ) тікелей әсер ететін негізгі күш.' }
+        ];
+
+        // --- MATCHING DATA 2: External Influences (NEW) ---
+        const matchingDataExternal = [
+            { id: 'D', question: 'Тұзды көп тұтыну', answerId: 'F' },
+            { id: 'E', question: 'Ақуызды шамадан тыс тұтыну', answerId: 'D' },
+            { id: 'F', question: 'Ыстық ауа-райы', answerId: 'E' }
+        ];
+
+        const matchingOptionsExternal = [
+            { id: 'D', text: 'Бүйрекке несепнәр мен креатининді сүзу үшін қосымша жүктеме түсіреді.' },
+            { id: 'E', text: 'Терлеу арқылы сұйықтық жоғалады, бұл АДГ гормонының бөлінуін күшейтеді.' },
+            { id: 'F', text: 'Қан көлемін ұлғайтып, қан қысымын көтереді, бүйректі артық натрийді шығаруға мәжбүрлейді.' }
+        ];
+        // --- END NEW MATCHING DATA ---
+
+        const quizData = [
+            {
+                question: 'Бүйректің негізгі сүзу жылдамдығы (КФЖ) неге тікелей байланысты?',
+                options: [
+                    { text: 'Терлеу мөлшеріне', correct: false, key: 'A' },
+                    { text: 'Қан қысымына', correct: true, key: 'B' },
+                    { text: 'Ақуыздың мөлшеріне', correct: false, key: 'C' }
+                ]
+            },
+            {
+                question: 'Бүйректе натрий иондарының қайта сіңірілуін реттейтін гормон қалай аталады?',
+                options: [
+                    { text: 'Вазопрессин (АДГ)', correct: false, key: 'A' },
+                    { text: 'Альдостерон', correct: true, key: 'B' },
+                    { text: 'Инсулин', correct: false, key: 'C' }
+                ]
+            },
+            {
+                question: 'Ұзақ уақыттық дегидратация (сусыздық) қандай қауіпті арттырады?',
+                options: [
+                    { text: 'Гломерулонефрит қаупін', correct: false, key: 'A' },
+                    { text: 'Бүйрек тасының түзілу қаупін', correct: true, key: 'B' },
+                    { text: 'Қан қысымының төмендеуін', correct: false, key: 'C' }
+                ]
+            }
+        ];
+        
+        // --- Matching 1: Internal Regulation ---
+        function renderMatchingInternal() {
+            const container = document.getElementById('matching-container-internal');
+            if (!container) return; 
+            container.innerHTML = '';
+            
+            const shuffledOptions = [...matchingOptionsInternal].sort(() => Math.random() - 0.5);
+
+            const leftCol = document.createElement('div');
+            leftCol.className = 'space-y-4';
+            matchingDataInternal.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'p-3 bg-sky-50 border border-sky-300 rounded-lg flex justify-between items-center';
+                itemDiv.innerHTML = `
+                    <span class="font-medium text-sky-800">${item.id}. ${item.question}</span>
+                    <select id="match-internal-${item.id}" class="p-1 border rounded-md w-1/4 bg-white text-gray-700">
+                        <option value="">Сәйкестендіру</option>
+                        ${matchingOptionsInternal.map(opt => `<option value="${opt.id}">${opt.id}</option>`).join('')}
+                    </select>
+                    <span id="feedback-internal-${item.id}" class="text-sm font-bold ml-2 w-10 text-right"></span>
+                `;
+                leftCol.appendChild(itemDiv);
+            });
+            container.appendChild(leftCol);
+
+            const rightCol = document.createElement('div');
+            rightCol.className = 'space-y-4 p-3 bg-gray-50 border rounded-lg';
+            rightCol.innerHTML = '<h4 class="font-bold text-gray-700 mb-2">Сипаттамалар:</h4>';
+            shuffledOptions.forEach(opt => {
+                const optDiv = document.createElement('div');
+                optDiv.className = 'p-3 bg-white border border-gray-200 rounded-lg';
+                optDiv.innerHTML = `<span class="font-medium text-gray-800">${opt.id}.</span> ${opt.text}`;
+                rightCol.appendChild(optDiv);
+            });
+            container.appendChild(rightCol);
+
+            const resultElement = document.getElementById('matching-result-internal');
+            if(resultElement) resultElement.textContent = '';
+        }
+
+        window.checkMatchingInternal = () => {
+            let correctCount = 0;
+            const total = matchingDataInternal.length;
+
+            matchingDataInternal.forEach(item => {
+                const selectElement = document.getElementById(`match-internal-${item.id}`);
+                const feedbackElement = document.getElementById(`feedback-internal-${item.id}`);
+                
+                if(!selectElement || !feedbackElement) return;
+
+                selectElement.classList.remove('correct', 'incorrect');
+                feedbackElement.textContent = '';
+
+                if (selectElement.value === item.answerId) {
+                    correctCount++;
+                    selectElement.classList.add('correct');
+                    feedbackElement.textContent = '✅';
+                } else if (selectElement.value !== "") {
+                    selectElement.classList.add('incorrect');
+                    feedbackElement.textContent = `❌ (${item.answerId})`;
+                }
+            });
+
+            const resultElement = document.getElementById('matching-result-internal');
+            const score = Math.round((correctCount / total) * 100);
+            if(resultElement){
+                resultElement.textContent = `Нәтижеңіз: ${correctCount} / ${total} (${score}%)`;
+                resultElement.className = `mt-4 p-3 rounded-lg text-center font-bold text-xl ${correctCount === total ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`;
+            }
+        }
+
+        window.resetMatchingInternal = () => {
+            const container = document.getElementById('matching-container-internal');
+            if(container) container.innerHTML = '';
+            const resultElement = document.getElementById('matching-result-internal');
+            if(resultElement) resultElement.textContent = '';
+            renderMatchingInternal();
+        }
+        
+        // --- Matching 2: External Influences (NEW FUNCTIONS) ---
+        function renderMatchingExternal() {
+            const container = document.getElementById('matching-container-external');
+            if (!container) return; 
+            container.innerHTML = '';
+            
+            const shuffledOptions = [...matchingOptionsExternal].sort(() => Math.random() - 0.5);
+
+            const leftCol = document.createElement('div');
+            leftCol.className = 'space-y-4';
+            matchingDataExternal.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'p-3 bg-green-50 border border-green-300 rounded-lg flex justify-between items-center';
+                itemDiv.innerHTML = `
+                    <span class="font-medium text-green-800">${item.id}. ${item.question}</span>
+                    <select id="match-external-${item.id}" class="p-1 border rounded-md w-1/4 bg-white text-gray-700">
+                        <option value="">Сәйкестендіру</option>
+                        ${matchingOptionsExternal.map(opt => `<option value="${opt.id}">${opt.id}</option>`).join('')}
+                    </select>
+                    <span id="feedback-external-${item.id}" class="text-sm font-bold ml-2 w-10 text-right"></span>
+                `;
+                leftCol.appendChild(itemDiv);
+            });
+            container.appendChild(leftCol);
+
+            const rightCol = document.createElement('div');
+            rightCol.className = 'space-y-4 p-3 bg-gray-50 border rounded-lg';
+            rightCol.innerHTML = '<h4 class="font-bold text-gray-700 mb-2">Сипаттамалар:</h4>';
+            shuffledOptions.forEach(opt => {
+                const optDiv = document.createElement('div');
+                optDiv.className = 'p-3 bg-white border border-gray-200 rounded-lg';
+                optDiv.innerHTML = `<span class="font-medium text-gray-800">${opt.id}.</span> ${opt.text}`;
+                rightCol.appendChild(optDiv);
+            });
+            container.appendChild(rightCol);
+
+            const resultElement = document.getElementById('matching-result-external');
+            if(resultElement) resultElement.textContent = '';
+        }
+
+        window.checkMatchingExternal = () => {
+            let correctCount = 0;
+            const total = matchingDataExternal.length;
+
+            matchingDataExternal.forEach(item => {
+                const selectElement = document.getElementById(`match-external-${item.id}`);
+                const feedbackElement = document.getElementById(`feedback-external-${item.id}`);
+                
+                if(!selectElement || !feedbackElement) return;
+
+                selectElement.classList.remove('correct', 'incorrect');
+                feedbackElement.textContent = '';
+
+                if (selectElement.value === item.answerId) {
+                    correctCount++;
+                    selectElement.classList.add('correct');
+                    feedbackElement.textContent = '✅';
+                } else if (selectElement.value !== "") {
+                    selectElement.classList.add('incorrect');
+                    feedbackElement.textContent = `❌ (${item.answerId})`;
+                }
+            });
+
+            const resultElement = document.getElementById('matching-result-external');
+            const score = Math.round((correctCount / total) * 100);
+            if(resultElement){
+                resultElement.textContent = `Нәтижеңіз: ${correctCount} / ${total} (${score}%)`;
+                resultElement.className = `mt-4 p-3 rounded-lg text-center font-bold text-xl ${correctCount === total ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`;
+            }
+        }
+
+        window.resetMatchingExternal = () => {
+            const container = document.getElementById('matching-container-external');
+            if(container) container.innerHTML = '';
+            const resultElement = document.getElementById('matching-result-external');
+            if(resultElement) resultElement.textContent = '';
+            renderMatchingExternal();
+        }
+        // --- END NEW FUNCTIONS ---
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            quizData.forEach((q, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question-block p-4 border border-gray-200 rounded-lg bg-gray-50';
+                qDiv.innerHTML = `
+                    <p class="font-semibold text-gray-800 mb-3">${index + 1}. ${q.question}</p>
+                    <div id="options-${index}" class="space-y-2">
+                        ${q.options.map(opt => `
+                            <button 
+                                class="interactive-btn w-full text-left" 
+                                data-q-index="${index}" 
+                                data-answer-key="${opt.key}"
+                                onclick="selectQuizOption(this, ${index})"
+                            >
+                                ${opt.key}. ${opt.text}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <p id="quiz-feedback-${index}" class="mt-2 font-medium text-sm"></p>
+                `;
+                container.appendChild(qDiv);
+            });
+            const resultElement = document.getElementById('quiz-result');
+            if(resultElement) resultElement.textContent = '';
+        }
+
+        window.selectQuizOption = (button, qIndex) => {
+            const optionsContainer = document.getElementById(`options-${qIndex}`);
+            if(!optionsContainer) return;
+            const buttons = optionsContainer.querySelectorAll('.interactive-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('selected', 'correct', 'incorrect'));
+            
+            button.classList.add('selected');
+
+            const resultElement = document.getElementById('quiz-result');
+            if(resultElement) resultElement.textContent = '';
+            document.getElementById(`quiz-feedback-${qIndex}`).textContent = '';
+        }
+
+        window.checkQuiz = () => {
+            let correctCount = 0;
+            const total = quizData.length;
+
+            quizData.forEach((q, index) => {
+                const optionsContainer = document.getElementById(`options-${index}`);
+                const buttons = optionsContainer.querySelectorAll('.interactive-btn');
+                const feedbackElement = document.getElementById(`quiz-feedback-${index}`);
+                
+                if(!optionsContainer || !feedbackElement) return;
+
+                let selectedAnswer = null;
+                buttons.forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                    if (btn.classList.contains('selected')) {
+                        selectedAnswer = btn.getAttribute('data-answer-key');
+                    }
+                });
+
+                const correctAnswer = q.options.find(opt => opt.correct).key;
+                
+                if (selectedAnswer) {
+                    const selectedButton = optionsContainer.querySelector(`[data-answer-key="${selectedAnswer}"]`);
+                    
+                    if (selectedAnswer === correctAnswer) {
+                        selectedButton.classList.add('correct');
+                        feedbackElement.textContent = '✅ Дұрыс!';
+                        correctCount++;
+                    } else {
+                        selectedButton.classList.add('incorrect');
+                        feedbackElement.innerHTML = `❌ Қате. Дұрыс жауап: <span class="text-green-600">${correctAnswer}</span>`;
+                        optionsContainer.querySelector(`[data-answer-key="${correctAnswer}"]`).classList.add('correct');
+                    }
+                } else {
+                    feedbackElement.textContent = '❓ Жауап таңдалмаған.';
+                    optionsContainer.querySelector(`[data-answer-key="${correctAnswer}"]`).classList.add('correct');
+                }
+            });
+
+            const resultElement = document.getElementById('quiz-result');
+            const score = Math.round((correctCount / total) * 100);
+            if(resultElement){
+                resultElement.textContent = `Жалпы нәтиже: ${correctCount} / ${total} (${score}%)`;
+                resultElement.className = `mt-4 p-3 rounded-lg text-center font-bold text-xl ${correctCount === total ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`;
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initFirebase(); 
+
+            const navButtons = document.querySelectorAll('.nav-button');
+            const contentSections = document.querySelectorAll('.content-section');
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    contentSections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.remove('hidden');
+                            if (targetId === 'section-tasks') {
+                                renderMatchingInternal(); // Re-render internal
+                                renderMatchingExternal(); // Render external
+                                renderQuiz();
+                            }
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const arrow = header.querySelector('.accordion-arrow');
+                    
+                    content.classList.toggle('open');
+                    arrow.classList.toggle('open');
+                });
+            });
+            
+            // Initial render of tasks when the page loads
+            renderMatchingInternal();
+            renderMatchingExternal();
+            renderQuiz();
+        });
+    </script>
+
+</body>
+</html>
